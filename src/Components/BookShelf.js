@@ -5,8 +5,8 @@ import {PropTypes} from 'prop-types'
 let BookShelf = (props) =>{
   
 const books = props.books
-let update_book = (book, shelf) => {
-props.onChangeShelf(book, shelf)
+let updateBook = (book, shelf) => {
+  props.onChangeShelf(book, shelf)
 }
 
 return (
@@ -15,7 +15,7 @@ return (
       <div className="bookshelf-books">
         <ol className="books-grid">
           {books.map((book, index) => (<Book book={book} key={index} onUpdate={(shelf) => {
-            update_book(book, shelf)
+            updateBook(book, shelf)
           }}/>))}
         </ol>
       </div>

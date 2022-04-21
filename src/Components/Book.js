@@ -4,7 +4,7 @@ import {PropTypes} from 'prop-types'
 let Book = (props) =>{
 
 const book = props.book
-let change_bookShelf = (e) => {
+let updateBookShelf = (e) => {
   props.onUpdate(e.target.value)
 }
 
@@ -18,7 +18,7 @@ return (
             backgroundImage: `url("${book.imageLinks.thumbnail}")`
           }}></div>
           <div className="book-shelf-changer">
-            <select onChange={change_bookShelf} value={book.shelf}>
+            <select onChange={updateBookShelf} value={book.shelf}>
               <option value="none" disabled>Move to...</option>
               <option value="currentlyReading">Currently Reading</option>
               <option value="wantToRead">Want to Read</option>
