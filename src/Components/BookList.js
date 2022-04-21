@@ -1,13 +1,12 @@
-import React from 'react'
+import React from "react";
 import BookShelf from "./BookShelf";
 import { Link } from "react-router-dom";
 import { PropTypes } from "prop-types";
 
-let BookList = (props) =>{
+let BookList = (props) => {
+  const books = props.books;
 
-const books = props.books;
-  
-return (
+  return (
     <div className="list-books">
       <div className="list-books-title">
         <h1>MyReads</h1>
@@ -33,11 +32,13 @@ return (
         </div>
       </div>
       <div className="open-search">
-        <Link to="/search">Add a book</Link>
+        <Link to="/search">
+          <button>Add a book</button>
+        </Link>
       </div>
     </div>
   );
-}
+};
 
 BookList.propTypes = {
   books: PropTypes.array.isRequired,
