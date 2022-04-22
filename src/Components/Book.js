@@ -21,7 +21,7 @@ let Book = (props) => {
           />
           <div className="book-shelf-changer">
             <select onChange={updateBookShelf} value={book.shelf}>
-              <option value="none" disabled>
+              <option value="disabled" disabled>
                 Move to...
               </option>
               <option value="currentlyReading">Currently Reading</option>
@@ -32,7 +32,7 @@ let Book = (props) => {
           </div>
         </div>
         <div className="book-title">{book.title}</div>
-        <div className="book-authors">{book.authors}</div>
+        <div className="book-authors">{book.authors}&nbsp;</div>
       </div>
     </li>
   );

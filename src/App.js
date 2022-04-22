@@ -7,7 +7,7 @@ import "./App.css";
 
 class BooksApp extends Component {
   state = {
-    Books: [],
+    allBooks: [],
   };
 
   componentDidMount() {
@@ -17,7 +17,7 @@ class BooksApp extends Component {
   fetchBooks = () => {
     BooksAPI.getAll().then((books) => {
       this.setState(() => ({
-        Books: books,
+        allBooks: books,
       }));
     });
   };
@@ -35,13 +35,13 @@ class BooksApp extends Component {
           <Switch>
             <Route exact path="/">
               <BookList 
-                books={this.state.Books} 
+                books={this.state.allBooks} 
                 onChange={this.updateBooks} />
             </Route>
             <Route exact path="/search">
               <BookSearch
                 onChange={this.updateBooks}
-                searchableBooks={this.state.Books}
+                searchableBooks={this.state.allBooks}
               />
             </Route>
           </Switch>
